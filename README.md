@@ -16,7 +16,7 @@ By building this model from scratch, I explored and resolved several key machine
 
 ---
 
-## 🛠️ Tech Stack & Tools (الأدوات المستخدمة)
+## 🛠️ Tech Stack & Tools 
 To build this project from scratch, the following professional data science and machine learning stack was utilized:
 
 * **Python 3:** The core programming language used for scripting the algorithms.
@@ -26,7 +26,7 @@ To build this project from scratch, the following professional data science and 
 
 ---
 
-## 📊 Dataset & Features (شرح المتغيرات)
+## 📊 Dataset & Features 
 The model was trained on the classic vehicle performance dataset, using the following features after dropping missing values:
 1.  **Bias ($X_0$):** A column of ones ($1s$) injected into the feature matrix to represent the intercept ($\theta_0$). It allows the regression plane to cross the Y-axis at a non-zero point.
 2.  **Horsepower ($X_1$):** Engine horsepower, normalized using Min-Max Scaling to prevent large values from dominating the gradient updates.
@@ -35,9 +35,9 @@ The model was trained on the classic vehicle performance dataset, using the foll
 
 ---
 
-## 📐 Mathematical Formulation & Explanations (المعادلات الرياضية وشرحها)
+## 📐 Mathematical Formulation & Explanations 
 
-### 1. Hypothesis Function (Matrix Form) - معادلة التوقع
+### 1. Hypothesis Function (Matrix Form) 
 Instead of using slow `for` loops to calculate predictions row by row, the model uses the dot product of the Feature Matrix ($X$) and the Weight Vector ($\Theta$):
 
 $$\hat{y} = X \cdot \Theta$$
@@ -49,7 +49,7 @@ $$\hat{y} = X \cdot \Theta$$
 
 ---
 
-### 2. Cost Function (Mean Squared Error - MSE) - دالة التكلفة لحساب نسبة الخطأ
+### 2. Cost Function (Mean Squared Error - MSE) - 
 To measure how far our model's predictions are from the real answers, we calculate the average squared difference between the predicted values ($\hat{y}$) and the actual values ($y$):
 
 $$J(\Theta) = \frac{1}{2n} \sum_{i=1}^{n} (\hat{y}^{(i)} - y^{(i)})^2$$
@@ -63,7 +63,7 @@ $$J(\Theta) = \frac{1}{2n} \sum_{i=1}^{n} (\hat{y}^{(i)} - y^{(i)})^2$$
 
 ---
 
-### 3. Gradient Descent Update Rule - قاعدة تحديث الأوزان والنزول التدريجي
+### 3. Gradient Descent Update Rule - 
 To minimize the error, the weights ($\Theta$) are updated simultaneously by taking steps in the opposite direction of the gradient. Using Linear Algebra, the gradients for all weights are computed efficiently in a single line using the matrix transpose ($X^T$):
 
 $$\text{Gradient} = \frac{1}{n} X^T \cdot (\hat{y} - y)$$
